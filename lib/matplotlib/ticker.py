@@ -2383,12 +2383,6 @@ class LogLocator(Locator):
         else:
             subs = self._subs
 
-        def alt_stride():
-            s = 1
-            while numdec // s + 1 > numticks:
-                s += 1
-            return s
-
         # Get decades between major ticks.
         stride = (max(math.ceil(numdec / (numticks - 1)), 1)
                   if mpl.rcParams['_internal.classic_mode'] else
